@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Yugn AI Digital Marketing Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Scroll-triggered fade-in animation */
+      .section-fade-in {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .section-fade-in.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        #printable-strategy, #printable-strategy * {
+          visibility: visible;
+        }
+        #printable-strategy {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+        .no-print {
+          display: none !important;
+        }
+        /* Ensure dark mode colors are reverted for printing */
+        body.dark #printable-strategy {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+        #printable-strategy .dark\\:bg-surface-dark,
+        #printable-strategy .dark\\:bg-surface-dark\\/60,
+        #printable-strategy .dark\\:bg-yellow-500\\/10 {
+            background-color: #f8fafc !important;
+        }
+         #printable-strategy .dark\\:text-primary-text-dark,
+         #printable-strategy .dark\\:text-yellow-200,
+         #printable-strategy .dark\\:text-secondary-text-dark,
+         #printable-strategy .dark\\:text-primary-text-dark {
+            color: #0f172a !important;
+        }
+        #printable-strategy .dark\\:border-border-dark {
+            border-color: #e2e8f0 !important;
+        }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable dark mode based on a class
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Sora', 'sans-serif'],
+              heading: ['Manrope', 'sans-serif'],
+            },
+            colors: {
+              // New Palette reflecting Founder's Values
+              'light': '#FDF8F0', // Light, creamy background
+              'dark': '#1e293b',  // Dark mode background (Deep Indigo Slate)
+              'surface-light': '#ffffff', // Light mode card background
+              'surface-dark': '#334155', // Dark mode card background (Indigo Slate)
+              
+              'primary-text-light': '#1e293b', // Dark Indigo Slate for text
+              'primary-text-dark': '#f1f5f9',  // Light text for dark mode
+              'secondary-text-light': '#475569', // Medium Indigo Slate
+              'secondary-text-dark': '#94a3b8', // Lighter Slate for dark mode
+              'subtle-text-light': '#64748b',   // Slate-500
+              'subtle-text-dark': '#64748b',   // Slate-500
+
+              'border-light': '#e2e8f0', // Slate-200
+              'border-dark': '#475569', // Slate-600
+              
+              'primary': '#f97316', // Saffron/Orange-500
+              'primary-hover': '#ea580c', // Orange-600
+              'secondary': '#4f46e5', // Indigo-600 for contrast
+              'accent': '#64748b', // Slate-500
+              
+              'success': '#16a34a', // Green-600
+              'warning': '#f59e0b', // Amber-500
+              'danger': '#dc2626', // Red-600
+            },
+            boxShadow: {
+                'sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+                'md': '0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05)',
+                'lg': '0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05)',
+                'xl': '0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05)',
+                'inner-md': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'fade-in-down': 'fadeInDown 0.5s ease-out forwards',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+              'slide-in-from-left': 'slideInFromLeft 0.5s ease-out forwards',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'progress-fill': 'progressFill 7s linear forwards',
+            },
+            keyframes: {
+              fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+              fadeInDown: { '0%': { opacity: '0', transform: 'translateY(-12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+              fadeInUp: { '0%': { opacity: '0', transform: 'translateY(12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+              slideInFromLeft: { '0%': { opacity: '0', transform: 'translateX(-12px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
+              progressFill: { '0%': { width: '0%' }, '100%': { width: '100%' } },
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0",
+    "chart.js": "https://aistudiocdn.com/chart.js@^4.4.3",
+    "react-chartjs-2": "https://aistudiocdn.com/react-chartjs-2@^5.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
